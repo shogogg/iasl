@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="sections">
+      <section id="section1">
+        <h1>Ingress Agent Stats Lottery</h1>
+      </section>
+      <section id="section2">
+        <h2>ルール説明 / System</h2>
+        <ol>
+          <li>エージェントステータスの項目と、ランダムな数字が発表されます。</li>
+          <li>発表された項目の数値の下1桁が、発表された数字と一致している人が勝ち抜けです。</li>
+          <li>これを繰り返し、最後まで勝ち抜いた人が賞品をGETできます。</li>
+          <li>これを何回か繰り返します。</li>
+        </ol>
+      </section>
+      <section>
+        <ol id="stats"></ol>
+      </section>
+    </div>
+    <script src="components/bespoke/bespoke.min.js"></script>
+    <script src="components/bespoke/bespoke-theme-nebula.min.js"></script>
+    <script src="components/bespoke/bespoke-keys.min.js"></script>
+    <script src="components/bespoke/bespoke-classes.min.js"></script>
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "agent-stats-lottery",
+  "version": "0.1.0",
+  "authors": [
+    "shogo <shogo@studiofly.net>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bespoke.js": "~1.0.0",
+    "jquery": "~2.1.1",
+    "bespoke-classes": "~1.0.0",
+    "bespoke-keys": "~1.0.0",
+    "bespoke-theme-nebula": "~1.0.1"
+  }
+}
