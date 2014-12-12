@@ -18,7 +18,7 @@ $ ->
     'Control Fields Created'
     'Mind Units Captured'
     'Longest Link Ever Created'
-    'Largest Control Field'
+    #'Largest Control Field'
     'XM Recharged'
     'Portals Captured'
     'Unique Portals Captured'
@@ -36,30 +36,33 @@ $ ->
   
   addSet = ->
     unbind()
+    
     li = $('<li/>')
     s1 = $('<span/>')
     s2 = $('<span/>')
     s3 = $('<span/>')
+    
     chooseStat = ->
       i = 0
-      m = 30
+      m = 40
       f = ->
         x = Math.floor(Math.random() * stats.length)
         s1.text(stats[x])
-        if i++ <= m then setTimeout(f, 100) else setTimeout(chooseNumber, 2000)
+        if i++ <= m then setTimeout(f, 50) else setTimeout(chooseNumber, 1000)
       f()
+
     chooseNumber = ->
       i = 0
-      m = 30
+      m = 40
       f = ->
-        x = Math.floor(Math.random() * 10)
-        s3.text('xx' + x)
-        if i++ <= m then setTimeout(f, 100) else bind()
-      li.append(s3)
+        x = Math.floor(Math.random() * 100)
+        s3.text(if x < 10 then "0#{x}" else x)
+        if i++ <= m then setTimeout(f, 50) else bind()
       f()
-    li.append(s1).append(s2).appendTo('#stats');
-    s2.text(' = ')
-    s3.text('xxx')
+
+    li.append(s1).append(s2).append(s3).appendTo('#stats')
+    s2.text(': ')
+    s3.text('xx')
     chooseStat()
 
   bind = ->
@@ -68,6 +71,7 @@ $ ->
         when 80 then addSet()
 
   unbind = ->
-    $(document).off('keyup');
+    $(document).off('keyup')
 
   bind()
+  $('#sections').fadeIn(2000)
