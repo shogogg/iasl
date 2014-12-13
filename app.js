@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var addSet, bind, deck, stats, unbind;
+    var addSet, bind, deck, reset, stats, unbind;
     deck = bespoke.from('#sections', [bespoke.themes.nebula(), bespoke.plugins.keys(), bespoke.plugins.classes()]);
     stats = ['Unique Portals Visited', 'Portals Discovered', 'XM Collected', 'Hacks', 'Resonators Deployed', 'Links Created', 'Control Fields Created', 'Mind Units Captured', 'Longest Link Ever Created', 'XM Recharged', 'Portals Captured', 'Unique Portals Captured', 'Resonators Destroyed', 'Portals Neutralized', 'Enemy Links Destroyed', 'Enemy Control Fields Destroyed', 'Distance Walked', 'Max Time Portal Held', 'Max Time Link Maintained', 'Max Link Length x Days', 'Max Time Field Held', 'Largest Field MUs x Days'];
     addSet = function() {
@@ -47,11 +47,16 @@
       s3.text('xx');
       return chooseStat();
     };
+    reset = function() {
+      return $('#stats').html('');
+    };
     bind = function() {
       return $(document).on('keyup', function(event) {
         switch (event.which) {
           case 80:
             return addSet();
+          case 82:
+            return reset();
         }
       });
     };
