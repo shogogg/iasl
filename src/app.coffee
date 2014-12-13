@@ -65,10 +65,14 @@ $ ->
     s3.text('xx')
     chooseStat()
 
+  reset = ->
+    $('#stats').html('')
+
   bind = ->
     $(document).on 'keyup', (event) ->
       switch event.which
         when 80 then addSet()
+        when 82 then reset()
 
   unbind = ->
     $(document).off('keyup')
